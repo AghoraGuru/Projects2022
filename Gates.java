@@ -35,4 +35,5 @@ public class Gates {
         return Nand(o,Nand(a,b));
         
     }
+    
 }
