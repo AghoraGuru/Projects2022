@@ -1,21 +1,19 @@
 public class Gate16 {
     public static int[] Nand16(int a[],int b[]) {
         int[] c = new int[16];
-        a = new int[16];
-        b = new int[16];
-        
         for (int i = 15; i >=0; i=i-1) {
             c[i] = Gates.Nand(a[i], b[i]);
         }
         return c;
     }
     public static int[] And16(int a[],int b[]) {
-        return Nand16(Nand16(a, b),Nand16(a,b));
+        int[] ab1 = Nand16(a, b);
+        return Nand16(ab1,ab1);
     }
     public static int[ ] Not16(int in[]) {
         return Nand16(in, in);
     }
-    public static int[] Or16(int a[],int b[],int c[]) {
+    public static int[] Or16(int a[],int b[]) {
         int aa[] =Nand16(a, a);
         int bb[] =Nand16(b, b);
         int C[] = Nand16(aa, bb);
@@ -47,16 +45,10 @@ public class Gate16 {
         cout[0] = Adders.HACarry(a[0], b[0]);
         int[] sout = new int[a.length];
         sout[0] = Adders.HASum(a[0], b[0]);
-        int j =0;
-        for (int i = 0; i < a.length; i++){
-            if(i==0){
-                 j =0;
-            }
-            else{
-                j = i-1;
-            }
-            sout[i] = Adders.FASum(a[i], b[i], cout[j]);
-            cout[i] = Adders.FACarry(a[i], b[i], cout[j]);
+        //int j =0;
+        for (int i = 1; i < a.length; i++){
+            sout[i] = Adders.FASum(a[i], b[i], cout[i-1]);
+            cout[i] = Adders.FACarry(a[i], b[i], cout[i-1]);
         }
         
         return sout;
