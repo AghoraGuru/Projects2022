@@ -10,7 +10,7 @@ public class Adders {
 		return Gates.Xor(Gates.Xor(a,b),c);
 		
 	}
-	public static int  FACaryy(int a,int b, int c) {
+	public static int  FACarry(int a,int b, int c) {
 		return Gates.Or(Gates.Or(Gates.And(a, b), Gates.And(b, c)),Gates.And(a, c));
 		
 	}
