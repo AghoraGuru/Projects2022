@@ -1,3 +1,2 @@
-This is a repo which consists of files for the projects given by our college.
-It consists of OOP(.java) & EOC(.hdl).
-Will update it simultaneously when i complete chips . :pray:
+Planning to organize all SEM projects into this repo , categorising as respective names !
+As of 07/02/2022 EOC & OOP combined projects are completed , it is updated in another repo , need to merge that with this repo!
