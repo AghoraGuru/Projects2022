@@ -9,26 +9,26 @@ public class CarrySelectAdders {
     public static void CSA4bit(int a[], int b[], int c) {
         // Calculatinf gor carry0
         int[] falsee = new int[] { 0, 0, 0, 0 };
-        int sum00 = Adders.FAusingHAsum(a[0], b[0], falsee[0]);
-        int carry00 = Adders.FAusingHAcarry(a[0], b[0], falsee[0]);
-        int sum01 = Adders.FAusingHAsum(a[1], b[1], carry00);
-        int carry01 = Adders.FAusingHAcarry(a[1], b[1], carry00);
-        int sum02 = Adders.FAusingHAsum(a[2], b[2], carry01);
-        int carry02 = Adders.FAusingHAcarry(a[2], b[2], carry01);
-        int sum03 = Adders.FAusingHAsum(a[3], b[3], carry02);
-        int carry03 = Adders.FAusingHAcarry(a[3], b[3], carry02);
+        int sum00 = Adders.FASum(a[0], b[0], falsee[0]);
+        int carry00 = Adders.FACarry(a[0], b[0], falsee[0]);
+        int sum01 = Adders.FASum(a[1], b[1], carry00);
+        int carry01 = Adders.FACarry(a[1], b[1], carry00);
+        int sum02 = Adders.FASum(a[2], b[2], carry01);
+        int carry02 = Adders.FACarry(a[2], b[2], carry01);
+        int sum03 = Adders.FASum(a[3], b[3], carry02);
+        int carry03 = Adders.FACarry(a[3], b[3], carry02);
 
         // calculating for carry1
 
         int[] truee = new int[] { 1, 1, 1, 1 };
-        int sum10 = Adders.FAusingHAsum(a[0], b[0], truee[0]);
-        int carry10 = Adders.FAusingHAcarry(a[0], b[0], truee[0]);
-        int sum11 = Adders.FAusingHAsum(a[1], b[1], carry10);
-        int carry11 = Adders.FAusingHAcarry(a[1], b[1], carry10);
-        int sum12 = Adders.FAusingHAsum(a[2], b[2], carry11);
-        int carry12 = Adders.FAusingHAcarry(a[2], b[2], carry11);
-        int sum13 = Adders.FAusingHAsum(a[3], b[3], carry12);
-        int carry13 = Adders.FAusingHAcarry(a[3], b[3], carry12);
+        int sum10 = Adders.FASum(a[0], b[0], truee[0]);
+        int carry10 = Adders.FACarry(a[0], b[0], truee[0]);
+        int sum11 = Adders.FASum(a[1], b[1], carry10);
+        int carry11 = Adders.FACarry(a[1], b[1], carry10);
+        int sum12 = Adders.FASum(a[2], b[2], carry11);
+        int carry12 = Adders.FACarry(a[2], b[2], carry11);
+        int sum13 = Adders.FASum(a[3], b[3], carry12);
+        int carry13 = Adders.FACarry(a[3], b[3], carry12);
 
         // mux for carry
 
