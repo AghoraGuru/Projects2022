@@ -18,7 +18,7 @@ public class SupportFunctions {
 
     public static String getStringInput() {
         try (Scanner sc = new Scanner(System.in)) {
-            String input = sc.next();
+            String input = sc.nextLine();
             return input;
         }
     }
@@ -64,7 +64,7 @@ public class SupportFunctions {
     }
     */
     //The real METHOD
-    public int[] Binaryconvertor(int in) {
+    public static int[] Binaryconvertor(int in) {
 
         //To get Input from User
         //System.out.println("Enter Int Value");
@@ -88,5 +88,14 @@ public class SupportFunctions {
         }
 
         return result.toString();
+    }
+    public static int[] binaryconvertor4bit(int input) {
+        String temp = toBinary(input);
+        int[] numbers = new int[temp.length()];
+        for (int i = 0; i < temp.length(); i++) {
+            numbers[i] = temp.charAt(i) - '0';
+        }
+        return numbers;
+        
     }
 }
