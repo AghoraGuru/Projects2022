@@ -6,11 +6,11 @@ public class CSA16 {
 
         int[] Carry = new int[16];
 
-        sum[0] = Adders.FAusingHAsum(a[0], b[0], c);
-        Carry[0] = Adders.FAusingHAcarry(a[0], b[0], c);
+        sum[0] = Adders.FASum(a[0], b[0], c);
+        Carry[0] = Adders.FACarry(a[0], b[0], c);
         for (int i = 1; i < 4; i++) {
-            sum[i] = Adders.FAusingHAsum(a[i], b[i], Carry[i - 1]);
-            Carry[i] = Adders.FAusingHAcarry(a[i], b[i], Carry[i - 1]);
+            sum[i] = Adders.FASum(a[i], b[i], Carry[i - 1]);
+            Carry[i] = Adders.FACarry(a[i], b[i], Carry[i - 1]);
         }
 
         int[] a4to7 = new int[] { a[4], a[5], a[6], a[7] };

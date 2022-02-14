@@ -1,11 +1,11 @@
-public class Gate16 {
+public class Gate16 extends Gates {
 
     public static int[] Nand16(int[] a, int[] b) {
 
         int[] c = new int[16];
 
         for (int i = 15; i >= 0; i = i - 1) {
-            c[i] = Gates.Nand(a[i], b[i]);
+            c[i] = Nand(a[i], b[i]);
         }
 
         return c;
@@ -29,7 +29,7 @@ public class Gate16 {
     public static int Or8Way(int[] in) {
 
         for (int i = 1; i < 8; i = i + 2) {
-            if (Gates.Or(in[i], in[i - 1]) == 1) {
+            if (Or(in[i], in[i - 1]) == 1) {
                 return 1;
             }
         }
@@ -48,20 +48,5 @@ public class Gate16 {
         return 0;
     }
 
-    public static int[] Add16(int a[], int b[]) {
-
-        int carry;
-        int[] sout = new int[a.length];
-
-        carry = Adders.HACarry(a[0], b[0]);
-        sout[0] = Adders.HASum(a[0], b[0]);
-
-        // int j =0;
-        for (int i = 1; i < a.length; i++) {
-            sout[i] = Adders.FASum(a[i], b[i], carry);
-            carry = Adders.FACarry(a[i], b[i], carry);
-        }
-
-        return sout;
-    }
+    
 }

@@ -1,57 +1,55 @@
-public class ALU {
-	public static int zr;
-	public static int[] ng;
-	public static int[] out;
+public class ALU extends Adders {
 
-	public static void Calculation(int x[], int y[], int zx, int zy, int nx, int ny, int f, int no) {
+    public static int zr;
+    public static int[] ng;
+    public static int[] out;
 
-		// pre-setting x input
-		int b[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-		int x1[] = Muxes.Mux16(x, b, zx);
-		int notx1[] = Gate16.Not16(x1);
-		int x2[] = Muxes.Mux16(x1, notx1, nx);
+    public static void calculation(int[] x, int[] y, int zx, int zy, int nx, int ny, int f, int no) {
 
-		// pre setting y input
-		int y1[] = Muxes.Mux16(y, b, zy);
-		int noty1[] = Gate16.Not16(y1);
-		int y2[] = Muxes.Mux16(y1, noty1, ny);
+        int[] zeros = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        int[] ones = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 
-		// And & Add Operations on the new values in case the gets changed
-		int andout[] = Gate16.And16(x2, y2);
-		int addout[] = Gate16.Add16(x2, y2);
+        // pre-setting x input
+        int[] x1 = Mux16(x, zeros, zx);
+        int[] notx1 = Not16(x1);
+        int[] x2 = Mux16(x1, notx1, nx);
 
-		// Selecting between And / Or operations
-		int out1[] = Muxes.Mux16(andout, addout, f);
+        // pre setting y input
+        int[] y1 = Mux16(y, zeros, zy);
+        int[] noty1 = Not16(y1);
+        int[] y2 = Mux16(y1, noty1, ny);
 
-		// setting if out will be Not out / out
-		int notout1[] = Gate16.Not16(out1);
-		out = Muxes.Mux16(out1, notout1, no);
+        // And & Add Operations on the new values in case the gets changed
+        int[] andout = And16(x2, y2);
+        int[] addout = Add16(x2, y2);
 
-		// if output is 0, zr will be 1
-		int zrsel = Gate16.Or16Way(out);
-		zr = Muxes.Mux(1, 0, zrsel);
+        // Selecting between And / Or operations
+        int[] out1 = Mux16(andout, addout, f);
 
-		// If output is less than 0 , ng will be 1
-		int[] ones = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
-		ng = Gate16.And16(ones, out);
-		/*
-		 * int[] ZR = {zr};
-		 * int[][] output = {out,ZR,ng};
-		 * 
-		 * return output;
-		 */
-	}
+        // setting if out will be Not out / out
+        int[] notout1 = Not16(out1);
+        out = Mux16(out1, notout1, no);
 
-	public static int[] getoutput() {
-		return out;
-	}
+        // if output is 0, zr will be 1
+        int zrsel = Or16Way(out);
+        zr = Mux(1, 0, zrsel);
 
-	public static int getZr() {
-		return zr;
-	}
+        // If output is less than 0 , ng will be 1
+        ng = And16(ones, out);
+    }
 
-	public static int getNg() {
-		return ng[15];
-	}
+    public static int[] getOutput() {
 
+        return out;
+    }
+
+    public static int getZr() {
+
+        return zr;
+    }
+
+    public static int getNg() {
+
+        return ng[15];
+    }
 }
