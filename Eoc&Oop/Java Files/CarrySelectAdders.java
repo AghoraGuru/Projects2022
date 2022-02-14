@@ -1,14 +1,14 @@
 /**
- * CarrySelectAdder
+ * CarrySelectAdder4Bit
  */
-public class CarrySelectAdders {
+public class CarrySelectAdders {            //!As Multi inheritance isn't allowed we call all the methods of req classes
     public static int[] sum;
     public static int carry;
     public static int Carry1;
 
     public static void CSA4bit(int a[], int b[], int c) {
         // Calculatinf gor carry0
-        int[] falsee = new int[] { 0, 0, 0, 0 };
+        int[] falsee = new int[] { 0, 0, 0, 0 };                //false is a reserved keyword
         int sum00 = Adders.FASum(a[0], b[0], falsee[0]);
         int carry00 = Adders.FACarry(a[0], b[0], falsee[0]);
         int sum01 = Adders.FASum(a[1], b[1], carry00);
@@ -20,7 +20,7 @@ public class CarrySelectAdders {
 
         // calculating for carry1
 
-        int[] truee = new int[] { 1, 1, 1, 1 };
+        int[] truee = new int[] { 1, 1, 1, 1 };                 //true is a reserved keyword
         int sum10 = Adders.FASum(a[0], b[0], truee[0]);
         int carry10 = Adders.FACarry(a[0], b[0], truee[0]);
         int sum11 = Adders.FASum(a[1], b[1], carry10);
@@ -44,11 +44,11 @@ public class CarrySelectAdders {
 
     }
 
-    public static int[] getSum() {
+    public static int[] getSum() {                              //gets the sum and returns it
         return sum;
     }
 
-    public static int getCarry() {
+    public static int getCarry() {                              //gets the carry and returns it
         return carry;
     }
 }

@@ -1,34 +1,35 @@
-import java.lang.reflect.Method;
-import java.util.Arrays;
 import java.util.Scanner;
 
 
 public class SupportFunctions {
 
     public static int[] getIntInput16() {
-        Scanner sc = new Scanner(System.in);
-        int[] array = new int[16];
-        System.out.println("Enter the elements of the array: ");
-        for (int i = 0; i < 16; i++) {
-            // reading array elements from the user
-            array[i] = sc.nextInt();
-        }
+        try (Scanner sc = new Scanner(System.in)) {
+            int[] array = new int[16];
+            System.out.println("Enter the elements of the array: ");
+            for (int i = 0; i < 16; i++) {
+                // reading array elements from the user
+                array[i] = sc.nextInt();
+            }
 
-        return array;
+            return array;
+        }
     }
 
     public static String getStringInput() {
-        Scanner sc = new Scanner(System.in);
-        String input = sc.next();
-        return input;
+        try (Scanner sc = new Scanner(System.in)) {
+            String input = sc.next();
+            return input;
+        }
     }
 
     public static int getIntInput() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter value: ");
-        int userIn = sc.nextInt();
-        
-        return userIn;
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("Enter value: ");
+            int userIn = sc.nextInt();
+            
+            return userIn;
+        }
     }
     // This is the Finaly input function we gonna use for HardWareSimulation Input!
     
@@ -63,12 +64,12 @@ public class SupportFunctions {
     }
     */
     //The real METHOD
-    public static int[] Binaryconvertor(int in) {
+    public int[] Binaryconvertor(int in) {
 
         //To get Input from User
-        System.out.println("Enter Value");
-        Scanner input = new Scanner(System.in);
-        in = input.nextInt();
+        //System.out.println("Enter Int Value");
+        //Scanner input = new Scanner(System.in);
+       // in = input.nextInt();
         String temp = toBinary(in);
         int[] numbers = new int[temp.length()];
         for (int i = 0; i < temp.length(); i++) {

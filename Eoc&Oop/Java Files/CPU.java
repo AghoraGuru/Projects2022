@@ -1,7 +1,7 @@
 public class CPU extends ProgramCounter {
     // static Register aRegister = new Register();
     // static Register dRegister = new Register();
-    static int[] x = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    static int[] x = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };              //to start of x is 0
     static int[] y = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     static int[] outM = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     static int writeM;
@@ -31,11 +31,11 @@ public class CPU extends ProgramCounter {
 
         // ALU(x = x, y = y, zx = ALUzx, zy = ALUzy, nx = ALUnx, ny = ALUny, f = ALUf,
         // no = ALUno, out = outM, out = outM, zr = zr, ng = ng);
-
+        
+        // ALU
         calculation(x, y, ALUzx, ALUzy, ALUnx, ALUny, ALUf, ALUno);
 
         outM = getOutput();
-        // TODO: FIX ALU
         int zr = getZr();
         int ng = getNg();
 
@@ -45,15 +45,16 @@ public class CPU extends ProgramCounter {
         int[] A = Mux16(instruction, outM, Type);
         int notType = Not(Type);
         int loadA = Or(notType, DestA);
-        // TODO: ARegister
-        int[] areg = new int[16];
+
+        //ARegister                     
+        int[] areg = new int[16];                           //as Areg is just reg with AdressM as output
         areg = Register.Reg(A, loadA);
         for (int i = 0; i < 15; i++) {
             addressM[i] = areg[i];
         }
         y = Mux16(areg, inM, AorM);
 
-        // TODO: DRegister
+        //DRegister
         x = Register.Reg(outM, DestD);
 
         int JEQ = And(cJEQ, zr);
@@ -61,10 +62,10 @@ public class CPU extends ProgramCounter {
         int JGT = And(cJGT, pos);
         int JLE = Or(JEQ, JLT);
         int jump = Or(JLE, JGT);
-        // TODO: PC
-        int truee = 1;
-        pcout = pc(areg, truee, jump, reset);
-        pcout[15] = 0;
+        //PC
+        int truee = 1;                                     //true is reserved keyword
+        pcout = pc(areg, truee, jump, reset);              //as inc is true for pc
+        pcout[15] = 0;                                     //15th bit of pc out is false
 
     }
 
