@@ -68,22 +68,22 @@ public class CPU extends ProgramCounter {
 
     }
 
-    public static int[] getOutM() {
+    public static int[] getOutM() {    //todo (not todo) : This is the OutM we will get if we use getOutM 
      
         return outM;
     }
 
-    public static int getWriteM() {
+    public static int getWriteM() {    //!This is the getWriteM we will get if we use getWriteM 
      
         return writeM;
     }
 
-    public static int[] getAddress() {
+    public static int[] getAddress() { //This is the getAddress we will get if we use getAddress 
      
         return addressM;
     }
 
-    public static int[] getPC() {
+    public static int[] getPC() {     //?This is the getPC we will get if we use getPC 
 
         return pcout;
     }
