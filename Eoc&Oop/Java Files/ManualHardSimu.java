@@ -1,4 +1,4 @@
-import java.util.Arrays;
+/*import java.util.Arrays;
 import java.util.Scanner;
 
 public class ManualHardSimu {
@@ -6,7 +6,7 @@ public class ManualHardSimu {
         
     
         
-    /*// !4bitgates
+    // !4bitgates
 
     System.out.println("Enter A values \n");
 
@@ -28,9 +28,11 @@ public class ManualHardSimu {
                                       // to get 4 bit array
     System.out.println("The Output is: ");
     System.out.print(out4);
-    System.out.println(""); // empty line*/
+    System.out.println(""); // empty line
+    
+    
 
-    /*// !16bitgates
+    // !16bitgates
 
     // 16 bit array A input
     System.out.println("Enter A values \n");
@@ -46,7 +48,7 @@ public class ManualHardSimu {
     int B16 = Integer.parseInt(inputb);
     int[] b = SupportFunctions.Binaryconvertor(B16);
 
-    System.out.println("The Output is");System.out.print(Gate16.And16(a,b));*/
+    System.out.println("The Output is");System.out.print(Gate16.And16(a,b));
 
     // !ALU
 
@@ -100,7 +102,7 @@ public class ManualHardSimu {
     System.out.println("ALU output is");
     System.out.print(Arrays.toString(out));
 
-    /*// !ADDERS
+    // !ADDERS
     // 16 bit array A input
     System.out.println("Enter A values \n");
     Scanner sc16aa = new Scanner(System.in);
@@ -116,9 +118,9 @@ public class ManualHardSimu {
     System.out.println("Enter c Value \n");
     Scanner scAc = new Scanner(System.in);
     String inC = scAc.nextLine();
-    int c = Integer.parseInt(inC);System.out.println("The output is");System.out.print(Adders.FASum(A,B,c));*/
+    int c = Integer.parseInt(inC);System.out.println("The output is");System.out.print(Adders.FASum(A,B,c));
 
-    /*// ! MUXES
+    // ! MUXES
     //16 bit array A input
     System.out.println("Enter A values \n");
     Scanner mxa = new Scanner(System.in);
@@ -132,10 +134,10 @@ public class ManualHardSimu {
     String inputmxb = mxb.nextLine();
     int mb = Integer.parseInt(inputmxb);
     int[] Mb = SupportFunctions.Binaryconvertor(mb);
-    int sel = 1;System.out.println("The Output is");System.out.print(Muxes.Mux16(Ma,Mb,sel));*/
+    int sel = 1;System.out.println("The Output is");System.out.print(Muxes.Mux16(Ma,Mb,sel));
 
 
-    /*// !clock
+    // !clock
     private static float clockvalue = 0;
 
     public static void main(String[] args) {
@@ -164,7 +166,8 @@ public class ManualHardSimu {
                         case default:
                         System.out.println("Please enter if you would like to Stop the program, Clock it or Change the values?"); //default case cuz it takes usr input
                 
-        }
+        
     }
-  }*/
-}}
+  }
+    }
+    }*/

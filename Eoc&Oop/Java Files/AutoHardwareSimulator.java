@@ -1,4 +1,4 @@
-import java.util.Scanner;
+/*import java.util.Scanner;
 import java.util.Arrays;
 
 public class HardwareSimulator {
@@ -196,4 +196,4 @@ public class HardwareSimulator {
 
         }
     }
-}
+}*/
