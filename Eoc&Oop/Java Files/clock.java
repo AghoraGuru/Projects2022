@@ -1,11 +1,12 @@
-public class clock{
+import java.util.Scanner;
+public class clock {
 
-    static float clocked = 0;           //as clock gets tik tok with 0.5
+    static float clocked = 0;
     public static void clocking() {
-        clocked += 0.5;                 //adds 0.5 to the previous clock
+        clocked += 0.5;
     }
 
     public static float time() {
-        return clocked;                 //returns the next clock cycle
+        return clocked;
     }
 }

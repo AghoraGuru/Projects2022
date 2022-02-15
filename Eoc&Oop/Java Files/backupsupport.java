@@ -1,10 +1,5 @@
-import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.Scanner;
-
-
-public class SupportFunctions {
-
+public class backupsupport {
+    
     static int[] ArrRev = new int[16];
 
     
@@ -41,7 +36,6 @@ public class SupportFunctions {
     public int[] getBinary() {
         return Reverse(ArrRev);
     }
-    
     public static int[] getIntInput16() {
         Scanner sc = new Scanner(System.in);
         int[] array = new int[16];
@@ -67,36 +61,4 @@ public class SupportFunctions {
         
         return userIn;
     }
-    // This is the Finaly input function we gonna use for HardWareSimulation Input!
-    
-/**
- * DEC-BIN Converter
- */
-    public int[] DbConv() {
-    // public static int[] bin;
-        System.out.println("Enter Value");
-        Scanner input = new Scanner(System.in);
-        int in = input.nextInt();
-        // String oout = toBinary(in);
-        // System.out.println(toBinary(in));
-
-        String temp = toBinary(in);
-        int[] numbers = new int[temp.length()];
-        for (int i = 0; i < temp.length(); i++) {
-            numbers[i] = temp.charAt(i) - '0';
-        }
-        return numbers;
-    }
-
-    public static String toBinary(int in) {
-        StringBuilder result = new StringBuilder();
-
-        for (int i = 31; i >= 0; i--) {
-            int mask = 1 << i;
-            result.append((in & mask) != 0 ? 1 : 0);
-        }
-
-        return result.toString();
-    }
 }
-

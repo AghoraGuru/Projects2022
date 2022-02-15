@@ -1,13 +1,13 @@
 public class ALU extends Adders {
 
-    public static int zr;                   //declaring the output values before hand to avoid problems and it is static
+    public static int zr;
     public static int[] ng;
     public static int[] out;
 
     public static void calculation(int[] x, int[] y, int zx, int zy, int nx, int ny, int f, int no) {
 
-        int[] zeros = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };           //replica of false
-        int[] ones = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };            //replica of true
+        int[] zeros = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        int[] ones = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 
         // pre-setting x input
         int[] x1 = Mux16(x, zeros, zx);
@@ -38,17 +38,17 @@ public class ALU extends Adders {
         ng = And16(ones, out);
     }
 
-    public static int[] getOutput() {                                   //a getter to access this class and get the OUT in line 31
+    public static int[] getOutput() {
 
         return out;
     }
 
-    public static int getZr() {                                         //getter to get zr as output
+    public static int getZr() {
 
         return zr;
     }
 
-    public static int getNg() {                                         //getter to get 15th value of Ng as output
+    public static int getNg() {
 
         return ng[15];
     }

@@ -4,13 +4,13 @@ public class Register {
 
     public static int[] Reg(int in[], int load) {
 
-        if (load == 1) {            //outs input if load is 1
+        if (load == 1) {
             out = in;
             
             return out;
         } else {
 
-            return out;             //outs if load is not 1
+            return out;
         }
     }
 }

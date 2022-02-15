@@ -1,6 +1,10 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ManualHardSimu {
+    public static void main(String[] args) {
+        
+    
         
     /*// !4bitgates
 
@@ -44,19 +48,21 @@ public class ManualHardSimu {
 
     System.out.println("The Output is");System.out.print(Gate16.And16(a,b));*/
 
-    /*// !ALU
+    // !ALU
 
     System.out.println("Enter x in decimal");
     Scanner scx = new Scanner(System.in);
     String inputx = scx.nextLine();
     int X = Integer.parseInt(inputx);
-    int[] x = SupportFunctions.Binaryconvertor(X);
+    int[] x = SupportFunctions.DbConv;
+    System.out.println(x);
 
     System.out.println("Enter y in decimal");
     Scanner scy = new Scanner(System.in);
     String inputy = scy.nextLine();
     int Y = Integer.parseInt(inputy);
     int[] y = SupportFunctions.Binaryconvertor(Y);
+    System.out.println(y);
 
     System.out.println("Enter zx in decimal");
     Scanner sczx = new Scanner(System.in);
@@ -86,9 +92,13 @@ public class ManualHardSimu {
     System.out.println("Enter no in decimal");
     Scanner scno = new Scanner(System.in);
     String NO = scno.nextLine();
-    int no = Integer.parseInt(NO);ALU.calculation(x,y,zx,zy,nx,ny,f,no);
+    int no = Integer.parseInt(NO);
+    
+    ALU.calculation(x,y,zx,zy,nx,ny,f,no);
 
-    int[] out = ALU.getOutput();System.out.println("ALU output is");System.out.print(out);*/
+    int[] out = ALU.getOutput();
+    System.out.println("ALU output is");
+    System.out.print(Arrays.toString(out));
 
     /*// !ADDERS
     // 16 bit array A input
@@ -125,7 +135,7 @@ public class ManualHardSimu {
     int sel = 1;System.out.println("The Output is");System.out.print(Muxes.Mux16(Ma,Mb,sel));*/
 
 
-    // !clock
+    /*// !clock
     private static float clockvalue = 0;
 
     public static void main(String[] args) {
@@ -156,5 +166,5 @@ public class ManualHardSimu {
                 
         }
     }
-  }
-}
+  }*/
+}}
