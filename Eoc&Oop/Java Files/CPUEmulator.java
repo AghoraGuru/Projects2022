@@ -13,7 +13,7 @@ public class CPUEmulator {
     private static int[] PC = {0};
     public static void main(String[] args) {
 
-        SupportFunctions Instructions = new SupportFunctions();
+        /*SupportFunctions Instructions = new SupportFunctions();
         SupportFunctions InM = new SupportFunctions();
 
         System.out.println("Enter a decimal value as input for the instruction bits: ");        //asks user
@@ -25,7 +25,9 @@ public class CPUEmulator {
         int[] revInM = InM.getBinary();
         System.out.println(Arrays.toString(revInM));
         int[] instruction = SupportFunctions.Reverse(revInstruction);                           //!instruction Variable for CPU
-        int[] inM = SupportFunctions.Reverse(revInM);                                           //!inM Variable for CPU
+        int[] inM = SupportFunctions.Reverse(revInM);     */
+        int[] instruction = new int[]{0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1};                                    //!inM Variable for CPU
+        int[] inM = new int[]{0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1};
         while (true) {
             System.out.println("Would you like to clock or stop?");
             String programChoice = SupportFunctions.getStringInput().toUpperCase();             // wheather uppercase or lowercase , this line changes into Uppercase

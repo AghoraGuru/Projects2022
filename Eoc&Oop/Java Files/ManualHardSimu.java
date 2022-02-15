@@ -1,4 +1,5 @@
-/*import java.util.Arrays;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ManualHardSimu {
@@ -6,9 +7,9 @@ public class ManualHardSimu {
         
     
         
-    // !4bitgates
+    /*// !4bitgates
 
-    System.out.println("Enter A values \n");
+    System.out.println("Enter A values in decimal \n");
 
     Scanner sc4a = new Scanner(System.in);
     String input4a = sc4a.nextLine();
@@ -17,7 +18,7 @@ public class ManualHardSimu {
     int[] usrin4A = SupportFunctions.binaryconvertor4bit(Usrinput4A); // for A ARRAY
 
     // for input B
-    System.out.println("Enter B Value \n");
+    System.out.println("Enter B Value in decimal \n");
     Scanner sc4b = new Scanner(System.in);
     String input4b = sc4b.nextLine();
     int Usrinput4B = Integer.parseInt(input4b);
@@ -28,42 +29,42 @@ public class ManualHardSimu {
                                       // to get 4 bit array
     System.out.println("The Output is: ");
     System.out.print(out4);
-    System.out.println(""); // empty line
+    System.out.println(""); // empty line*/
     
     
 
-    // !16bitgates
+    /*// !16bitgates
 
     // 16 bit array A input
-    System.out.println("Enter A values \n");
+    System.out.println("Enter A values  in decimal \n");
     Scanner sc16a = new Scanner(System.in);
     String input16a = sc16a.nextLine();
     int A16 = Integer.parseInt(input16a);
     int[] a = SupportFunctions.Binaryconvertor(A16);
 
     // 16 bit array B input
-    System.out.println("Enter B Value \n");
+    System.out.println("Enter B Value  in decimal \n");
     Scanner sc16b = new Scanner(System.in);
     String inputb = sc16b.nextLine();
     int B16 = Integer.parseInt(inputb);
     int[] b = SupportFunctions.Binaryconvertor(B16);
 
-    System.out.println("The Output is");System.out.print(Gate16.And16(a,b));
+    System.out.println("The Output is");System.out.print(Gate16.And16(a,b));*/
 
-    // !ALU
+    /*// !ALU
 
     System.out.println("Enter x in decimal");
     Scanner scx = new Scanner(System.in);
     String inputx = scx.nextLine();
     int X = Integer.parseInt(inputx);
-    int[] x = SupportFunctions.DbConv;
+    int[] x = SupportFunctions.bin16(X);
     System.out.println(x);
 
     System.out.println("Enter y in decimal");
     Scanner scy = new Scanner(System.in);
     String inputy = scy.nextLine();
     int Y = Integer.parseInt(inputy);
-    int[] y = SupportFunctions.Binaryconvertor(Y);
+    int[] y = SupportFunctions.bin16(Y);
     System.out.println(y);
 
     System.out.println("Enter zx in decimal");
@@ -100,9 +101,9 @@ public class ManualHardSimu {
 
     int[] out = ALU.getOutput();
     System.out.println("ALU output is");
-    System.out.print(Arrays.toString(out));
+    System.out.print(Arrays.toString(out));*/
 
-    // !ADDERS
+    /*// !ADDERS
     // 16 bit array A input
     System.out.println("Enter A values \n");
     Scanner sc16aa = new Scanner(System.in);
@@ -118,9 +119,11 @@ public class ManualHardSimu {
     System.out.println("Enter c Value \n");
     Scanner scAc = new Scanner(System.in);
     String inC = scAc.nextLine();
-    int c = Integer.parseInt(inC);System.out.println("The output is");System.out.print(Adders.FASum(A,B,c));
+    int c = Integer.parseInt(inC);
+    System.out.println("The output is");
+    System.out.print(Adders.FASum(A,B,c));*/
 
-    // ! MUXES
+    /*// ! MUXES
     //16 bit array A input
     System.out.println("Enter A values \n");
     Scanner mxa = new Scanner(System.in);
@@ -134,10 +137,10 @@ public class ManualHardSimu {
     String inputmxb = mxb.nextLine();
     int mb = Integer.parseInt(inputmxb);
     int[] Mb = SupportFunctions.Binaryconvertor(mb);
-    int sel = 1;System.out.println("The Output is");System.out.print(Muxes.Mux16(Ma,Mb,sel));
+    int sel = 1;System.out.println("The Output is");System.out.print(Muxes.Mux16(Ma,Mb,sel));*/
 
 
-    // !clock
+    /*// !clock
     private static float clockvalue = 0;
 
     public static void main(String[] args) {
@@ -165,9 +168,71 @@ public class ManualHardSimu {
                         break;
                         case default:
                         System.out.println("Please enter if you would like to Stop the program, Clock it or Change the values?"); //default case cuz it takes usr input
-                
-        
-    }
+                }*/
+    /*//!CSA4bit
+    System.out.println("Enter A values in decimal \n");
+
+    Scanner csaA = new Scanner(System.in);
+    String input4a = csaA.nextLine();
+    int A = Integer.parseInt(input4a);
+
+    int[] a = SupportFunctions.bin4(A); // for A ARRAY
+
+    // for input B
+    System.out.println("Enter B Value in decimal \n");
+    Scanner csaB = new Scanner(System.in);
+    String input4b = csaB.nextLine();
+    int B = Integer.parseInt(input4b);
+
+    int[] b = SupportFunctions.bin4(B); // for B ARRAY
+
+    System.out.println("Enter C value");
+    Scanner cry = new Scanner(System.in);
+    String carry = cry.nextLine();
+    int c = Integer.parseInt(carry);
+
+    CarrySelectAdders.CSA4bit(a, b, c);
+    System.out.println("The sum ");
+    System.out.println(Arrays.toString(SupportFunctions.Reverse(CarrySelectAdders.getSum())));
+    System.out.println("The Carry");
+    System.out.println(CarrySelectAdders.getCarry());*/
+
+    /*//!AUTO CSA16
+    // 16 bit array A input
+    System.out.println("Enter A values  in decimal \n");
+    Scanner sc16a = new Scanner(System.in);
+    String input16a = sc16a.nextLine();
+    int A16 = Integer.parseInt(input16a);
+    int[] a = SupportFunctions.bin16(A16);
+    System.out.println(Arrays.toString(a));
+
+    // 16 bit array B input
+    System.out.println("Enter B Value  in decimal \n");
+    Scanner sc16b = new Scanner(System.in);
+    String inputb = sc16b.nextLine();
+    int B16 = Integer.parseInt(inputb);
+    int[] b = SupportFunctions.bin16(B16);
+    System.out.println(Arrays.toString(b));
+
+    System.out.println("Enter C value");
+    Scanner cry = new Scanner(System.in);
+    String carry = cry.nextLine();
+    int c = Integer.parseInt(carry);
+
+    CSA16.Operations(a, b, c);
+
+    System.out.println("the sum");
+    System.out.println(Arrays.toString(SupportFunctions.Reverse(CSA16.getSum16())));
+    System.out.println(CSA16.getCarr16());
+
+    /*int[] a = new int[]{0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0};
+    int[] B = new int[]{0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0};
+
+    CSA16.Operations(a, B, 1);
+    System.out.println(Arrays.toString(SupportFunctions.Reverse(CSA16.getSum16())));
+    System.out.println(CSA16.getCarr16());*/
+
+
+    
   }
-    }
-    }*/
+ }

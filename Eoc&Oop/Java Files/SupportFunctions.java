@@ -87,16 +87,43 @@ public class SupportFunctions {
         }
         return numbers;
     }
+    public static int[] bin16(int in) {
+        String temp = toBinary(in);
+        int[] numbers = new int[temp.length()];
+        for (int i = 0; i < temp.length(); i++) {
+            numbers[i] = temp.charAt(i) - '0';
+        }
+        return numbers;
+    }
 
     public static String toBinary(int in) {
         StringBuilder result = new StringBuilder();
 
-        for (int i = 31; i >= 0; i--) {
+        for (int i = 15; i >= 0; i--) {
             int mask = 1 << i;
             result.append((in & mask) != 0 ? 1 : 0);
         }
 
         return result.toString();
     }
-}
+    public static String toBinary4(int in) {
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 4; i >= 0; i--) {
+            int mask = 1 << i;
+            result.append((in & mask) != 0 ? 1 : 0);
+        }
+
+        return result.toString();
+    }
+    public static int[] bin4(int in) {
+        String temp = toBinary4(in);
+        int[] numbers2 = new int[temp.length()];
+        for (int i = 0; i < temp.length(); i++) {
+            numbers2[i] = temp.charAt(i) - '0';
+        }
+        return numbers2;
+    }
+    }
+
 
