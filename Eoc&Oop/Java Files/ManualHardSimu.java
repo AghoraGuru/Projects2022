@@ -4,9 +4,7 @@ import java.util.Scanner;
 
 public class ManualHardSimu {
     public static void main(String[] args) {
-        
-    
-        
+         
     /*// !4bitgates
 
     System.out.println("Enter A values in decimal \n");
@@ -25,8 +23,7 @@ public class ManualHardSimu {
 
     int[] usrin4B = SupportFunctions.binaryconvertor4bit(Usrinput4B); // for B ARRAY
 
-    int out4 = Gates.Not(Usrinput4A); // change the method to get 4bit gates and change input to array
-                                      // to get 4 bit array
+    int out4 = Gates.Not(Usrinput4A); // change the method to get 4bit gates and change input to array to get 4 bit array
     System.out.println("The Output is: ");
     System.out.print(out4);
     System.out.println(""); // empty line*/
@@ -123,21 +120,23 @@ public class ManualHardSimu {
     System.out.println("The output is");
     System.out.print(Adders.FASum(A,B,c));*/
 
-    /*// ! MUXES
-    //16 bit array A input
+    // ! MUXES
+    /*//16 bit array A input
     System.out.println("Enter A values \n");
     Scanner mxa = new Scanner(System.in);
     String inputmxa = mxa.nextLine();
-    int ma = Integer.parseInt(inputmxa);
-    int[] Ma = SupportFunctions.Binaryconvertor(ma);
+    int ma = 5;
+    int[] Ma = SupportFunctions.bin16(ma);
 
     //16 bit array B input
     System.out.println("Enter B Value \n");
     Scanner mxb = new Scanner(System.in);
     String inputmxb = mxb.nextLine();
-    int mb = Integer.parseInt(inputmxb);
-    int[] Mb = SupportFunctions.Binaryconvertor(mb);
-    int sel = 1;System.out.println("The Output is");System.out.print(Muxes.Mux16(Ma,Mb,sel));*/
+    int mb = 4;
+    int[] Mb = SupportFunctions.bin16(mb);
+    int sel = 1;
+    System.out.println("The Output is");
+    System.out.print((Muxes.Mux(mb,ma,sel)));*/
 
 
     /*// !clock
@@ -232,7 +231,11 @@ public class ManualHardSimu {
     System.out.println(Arrays.toString(SupportFunctions.Reverse(CSA16.getSum16())));
     System.out.println(CSA16.getCarr16());*/
 
-
+    /*int a = 0;
+    int b = 1;
+    int sel = 1;
+    int out = Muxes.Mux(a, b, sel);
+    System.out.println(out);*/
     
-  }
+   }
  }
