@@ -100,7 +100,7 @@ public class ManualHardSimu {
     System.out.println("ALU output is");
     System.out.print(Arrays.toString(out));*/
 
-    /*// !ADDERS
+   /* // !ADDERS
     // 16 bit array A input
     System.out.println("Enter A values \n");
     Scanner sc16aa = new Scanner(System.in);
@@ -155,8 +155,8 @@ public class ManualHardSimu {
                     case "CLOCK":
                         if (clockvalue == 0) {
                             System.out.println(clockvalue);
-                            clock.clocking(); //clocks next cycle adds 0.5 to prev clock                                        //|
-                        } else if ((clockvalue * 10) % 2 == 0) {                                                                //|
+                            clock.clocking(); //clocks next cycle adds 0.5 to prev clock                                        
+                        } else if ((clockvalue * 10) % 2 == 0) {                                                                
                             System.out.println(clockvalue); 
                             clock.clocking();
                         } else {
