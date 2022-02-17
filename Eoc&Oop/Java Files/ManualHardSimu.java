@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ManualHardSimu {
     public static void main(String[] args) {
          
-    /*// !4bitgates
+    // !4bitgates
 
     System.out.println("Enter A values in decimal \n");
 
@@ -13,7 +13,7 @@ public class ManualHardSimu {
     String input4a = sc4a.nextLine();
     int Usrinput4A = Integer.parseInt(input4a);
 
-    int[] usrin4A = SupportFunctions.binaryconvertor4bit(Usrinput4A); // for A ARRAY
+    int[] usrin4A = SupportFunctions.bin4(Usrinput4A); // for A ARRAY
 
     // for input B
     System.out.println("Enter B Value in decimal \n");
@@ -21,12 +21,12 @@ public class ManualHardSimu {
     String input4b = sc4b.nextLine();
     int Usrinput4B = Integer.parseInt(input4b);
 
-    int[] usrin4B = SupportFunctions.binaryconvertor4bit(Usrinput4B); // for B ARRAY
+    int[] usrin4B = SupportFunctions.bin4(Usrinput4B); // for B ARRAY
 
     int out4 = Gates.Not(Usrinput4A); // change the method to get 4bit gates and change input to array to get 4 bit array
     System.out.println("The Output is: ");
     System.out.print(out4);
-    System.out.println(""); // empty line*/
+    System.out.println(""); // empty line
     
     
 

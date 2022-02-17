@@ -1,7 +1,7 @@
 /*import java.util.Scanner;
 import java.util.Arrays;
 
-public class HardwareSimulator {
+public class AutoHardwareSimulator {
 
     public static void main(String[] args) {
         float clockvalue = 0;
@@ -26,7 +26,7 @@ public class HardwareSimulator {
                     String input4a = sc4a.nextLine();
                     int Usrinput4A = Integer.parseInt(input4a);
 
-                    int[] usrin4A = SupportFunctions.binaryconvertor4bit(Usrinput4A); // for A ARRAY
+                    int[] usrin4A = SupportFunctions.bin4(Usrinput4A); // for A ARRAY
 
                     // for input B
                     System.out.println("Enter B Value \n");
@@ -34,7 +34,7 @@ public class HardwareSimulator {
                     String input4b = sc4b.nextLine();
                     int Usrinput4B = Integer.parseInt(input4b);
 
-                    int[] usrin4B = SupportFunctions.binaryconvertor4bit(Usrinput4B); // for B ARRAY
+                    int[] usrin4B = SupportFunctions.bin4(Usrinput4B); // for B ARRAY
 
                     int out4 = Gates.Not(Usrinput4A); // change the method to get 4bit gates and change input to array
                                                       // to get 4 bit array
@@ -196,4 +196,5 @@ public class HardwareSimulator {
 
         }
     }
-}*/
+}
+*/

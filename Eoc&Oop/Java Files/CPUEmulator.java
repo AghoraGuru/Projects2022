@@ -13,19 +13,7 @@ public class CPUEmulator {
     private static int[] PC = {0};
     public static void main(String[] args) {
 
-        /*SupportFunctions Instructions = new SupportFunctions();
-        SupportFunctions InM = new SupportFunctions();
-
-        System.out.println("Enter a decimal value as input for the instruction bits: ");        //asks user
-        Instructions.binaryInput();
-        int[] revInstruction = Instructions.getBinary();
-        System.out.println(Arrays.toString(revInstruction));
-        System.out.println("Enter a decimal value as input for the inM bits: ");
-        InM.binaryInput();
-        int[] revInM = InM.getBinary();
-        System.out.println(Arrays.toString(revInM));
-        int[] instruction = SupportFunctions.Reverse(revInstruction);                           //!instruction Variable for CPU
-        int[] inM = SupportFunctions.Reverse(revInM);     */
+        
         int[] instruction = new int[]{0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1};                                    //!inM Variable for CPU
         int[] inM = new int[]{0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1};
         while (true) {

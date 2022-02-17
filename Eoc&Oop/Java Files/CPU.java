@@ -48,7 +48,6 @@ public class CPU extends ProgramCounter {
             calculation(x, y, ALUzx, ALUzy, ALUnx, ALUny, ALUf, ALUno);
 
             outM = getOutput();
-            // TODO: FIX ALU
             int zr = getZr();
             int ng = getNg();
 
@@ -58,7 +57,6 @@ public class CPU extends ProgramCounter {
             int[] A = Mux16(instruction, outM, Type);
             int notType = Not(Type);
             int loadA = Or(notType, DestA);
-            // TODO: ARegister
             Sequential areg = new Sequential();
             areg.timer = CPUEmulator.clockvalue;
             areg.Register(A, loadA);
@@ -67,7 +65,6 @@ public class CPU extends ProgramCounter {
             }
             y = Mux16(areg.RegOut, inM, AorM);
 
-            // TODO: DRegister
             Sequential dreg = new Sequential();
             dreg.timer = CPUEmulator.clockvalue;
             dreg.Register(outM, DestD);
@@ -78,7 +75,7 @@ public class CPU extends ProgramCounter {
             int JGT = And(cJGT, pos);
             int JLE = Or(JEQ, JLT);
             int jump = Or(JLE, JGT);
-            // TODO: PC
+            
             int truee = 1;
             pcout = pc(areg.RegOut, truee, jump, reset);
             pcout[15] = 0;
