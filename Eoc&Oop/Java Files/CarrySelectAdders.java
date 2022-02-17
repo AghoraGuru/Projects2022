@@ -7,7 +7,7 @@ public class CarrySelectAdders {            //!As Multi inheritance isn't allowe
     public static int Carry1;
 
     public static void CSA4bit(int a[], int b[], int c) {
-        // Calculatinf gor carry0
+        // Calculating for carry0
         int[] falsee = new int[] { 0, 0, 0, 0 };                //false is a reserved keyword
         int sum00 = Adders.FASum(a[0], b[0], falsee[0]);
         int carry00 = Adders.FACarry(a[0], b[0], falsee[0]);
