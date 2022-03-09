@@ -1,7 +1,9 @@
-/*import java.util.Scanner;
+import java.util.Scanner;
 import java.util.Arrays;
 
 public class AutoHardwareSimulator {
+    
+    //it will work, just not perfect ...
 
     public static void main(String[] args) {
         float clockvalue = 0;
@@ -197,4 +199,3 @@ public class AutoHardwareSimulator {
         }
     }
 }
-*/
