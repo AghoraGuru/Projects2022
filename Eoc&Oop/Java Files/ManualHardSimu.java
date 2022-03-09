@@ -1,6 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
+//uncomment which one you want to test :slight_smile:
 
 public class ManualHardSimu {
     public static void main(String[] args) {
@@ -28,7 +29,7 @@ public class ManualHardSimu {
     System.out.print(out4);
     System.out.println(""); // empty line
     
-    
+    //Tester starts here
 
     /*// !16bitgates
 
